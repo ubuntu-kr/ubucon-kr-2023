@@ -1,0 +1,23 @@
+{
+  "name": "ubucon-kr-2023",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^2.2.0",
+    "@canonical/react-components": "^0.41.0",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "astro": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.62.1",
+    "vanilla-framework": "^3.14.0"
+  }
+}
