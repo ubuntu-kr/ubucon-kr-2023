@@ -1,0 +1,22 @@
+---
+import { languages } from '../i18n/ui';
+import { ContextualMenu } from "@canonical/react-components";
+---
+<!-- <ul>
+  {Object.entries(languages).map(([lang, label]) => (
+    <li>
+      <a href={`/${lang}/`}>{label}</a>
+    </li>
+  ))}
+</ul> -->
+<ContextualMenu 
+    hasToggleIcon
+    links={Object.entries(languages).map(([lang, label]) => {
+        return {
+            children: label,
+            onClick: () => window.location.href = `/${lang}/`
+        }
+    })}
+    position="right"
+    toggleLabel="Choose language..."
+  />

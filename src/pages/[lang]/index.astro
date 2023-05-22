@@ -1,0 +1,139 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {
+	Navigation,
+	Strip,
+	Col,
+	Button,
+	List,
+} from "@canonical/react-components";
+import LanguagePicker from '../../components/LanguagePicker.astro';
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths () {
+ return [
+    {params: {lang: 'en'}},
+    {params: {lang: 'ko'}},
+  ];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="UbuCon Korea 2023">
+	<main>
+		<Navigation
+			items={[]}
+			itemsRight={[
+				{
+					label: "ubuntu-kr.org",
+					url: "https://ubuntu-kr.org",
+				},
+			]}
+			logo={{
+				src: "/UbuntuKrCircleWhite.svg",
+				title: "UbuCon Korea 2023",
+				url: "#",
+			}}
+			theme="dark"
+		/>
+		<Strip type="suru" element="section" includeCol={false}>
+			<Col size={8}>
+				<h1><b>UbuCon Korea 2023</b></h1>
+				<h1>{t('eventMeta.date')}</h1>
+				<h1>{t('eventMeta.venue')}</h1>
+				<p>{t('eventMeta.venueDisclaimer')}</p>
+			</Col>
+			<Col size={4}>
+				<img src="/logo.svg" alt="Placeholder" />
+			</Col>
+		</Strip>
+		<Strip bordered element="section" includeCol={false}>
+			<section class="p-section">
+				<div class="p-block">
+					<div class="row">
+						<hr class="p-rule" />
+					</div>
+					<div class="row--50-50">
+						<div class="col">
+							<h2>
+								{t('intro.uca23')}
+							</h2>
+						</div>
+						<div class="col">
+							<p>
+								{t('intro.uca23desc')}
+							</p>
+							<Button
+								appearance=""
+								element={"a"}
+								href="https://discourse.ubuntu-kr.org"
+							>
+								{t('intro.visitForum')}
+							</Button>
+						</div>
+					</div>
+				</div>
+				<div class="p-block">
+					<div class="row">
+						<hr class="p-rule" />
+					</div>
+					<div class="row--50-50">
+						<div class="col">
+							<h2>{t('sponsorship.getNotified')}</h2>
+						</div>
+						<div class="col">
+							<p>
+                                {t('sponsorship.notifyDesc')}
+							</p>
+							<Button
+								appearance=""
+								element={"a"}
+								href="mailto:sponsorship@ubuntu-kr.org"
+							>
+								{t('sponsorship.notifyContact')}
+							</Button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</Strip>
+		<footer class="l-footer--sticky p-strip--light">
+			<nav class="row" aria-label="Footer">
+				<div class="has-cookie">
+					<p>
+						© 2023 우분투한국커뮤니티. 우분투(Ubuntu) 및
+						캐노니컬(Canonical)은 Canonical Ltd.의 등록 상표입니다.
+					</p>
+					<ul class="p-inline-list--middot">
+						<li class="p-inline-list__item">
+							<a href="https://disclosures.ubuntu-kr.org/legal/">정관 및 세칙</a>
+						</li>
+						<li class="p-inline-list__item">
+							<a href="https://fb.com/ubuntukorea">Facebook</a>
+						</li>
+						<li class="p-inline-list__item">
+							<a href="https://twitter.com/UbuntuKrOrg">Twitter</a>
+						</li>
+						<li class="p-inline-list__item">
+							<a href="https://www.linkedin.com/company/ubuntu-kr/">LinkedIn</a>
+						</li>
+						<li class="p-inline-list__item">
+							<a href="https://mastodon.social/@UbuntuKrOrg">Mastodon</a>
+						</li>
+						<li class="p-inline-list__item">
+							<a href="https://staging.bsky.app/profile/ubuntu-kr.org">Bluesky</a>
+						</li>
+						<li class="p-inline-list__item">
+							<a href="https://github.com/ubuntu-kr/ubucon-kr-2023/issues/new/choose">웹사이트에 대한 버그 보고</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</footer>
+	</main>
+
+	<style></style>
+</Layout>

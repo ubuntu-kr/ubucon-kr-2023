@@ -6,13 +6,19 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="2023년 9월 9일, 한국마이크로소프트" />
+		<meta name="description" content=`${t('eventMeta.date')}, ${t('eventMeta.venue')}` />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
