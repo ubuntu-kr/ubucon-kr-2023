@@ -9,6 +9,7 @@ export const defaultLang = 'ko';
 export const ui = {
   ko: {
     'eventMeta.date': '2023년 9월 9일',
+    'eventMeta.theme': '개발자 생산성을 위한 우분투',
     'eventMeta.venue': '한국마이크로소프트*',
     'eventMeta.venueDisclaimer': '*거의 확정 되었으나, 변동될 수 있음.',
     'intro.uca23': '작년 UbuCon Asia에 이어, 올해는 UbuCon Korea가 열립니다.',
@@ -20,6 +21,7 @@ export const ui = {
   },
   en: {
     'eventMeta.date': '9th September 2023',
+    'eventMeta.theme': 'Ubuntu for Developer Productivity',
     'eventMeta.venue': 'Microsoft Korea*',
     'eventMeta.venueDisclaimer': '*Venue may subject to change',
     'intro.uca23': "Following last year's UbuCon Asia, UbuCon Korea will be held.",
