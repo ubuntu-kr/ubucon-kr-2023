@@ -7,7 +7,7 @@ import {
 	Button,
 	List,
 } from "@canonical/react-components";
-import LanguagePicker from '../../components/LanguagePicker.astro';
+import LanguagePicker from '../../components/LanguagePicker.jsx';
 
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
@@ -98,6 +98,7 @@ const t = useTranslations(lang);
 						</div>
 					</div>
 				</div>
+                
 			</section>
 		</Strip>
 		<footer class="l-footer--sticky p-strip--light">
@@ -131,6 +132,7 @@ const t = useTranslations(lang);
 						</li>
 					</ul>
 				</div>
+                <LanguagePicker client:only="react"/>
 			</nav>
 		</footer>
 	</main>
