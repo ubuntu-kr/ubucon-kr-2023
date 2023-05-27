@@ -15,9 +15,9 @@ export const ui = {
     'intro.uca23': '작년 UbuCon Asia에 이어, 올해는 UbuCon Korea가 열립니다.',
     'intro.uca23desc': '작년에 이어 서울에서 오는 가을에 열립니다. 자세한 사항은 곧 이 웹사이트에 업데이트 됩니다. 포럼에 로그인 후 알림 설정을 하시면, 업데이트를 받으실 수 있습니다.',
     'intro.visitForum':'우분투한국커뮤니티 포럼 방문',
-    'sponsorship.getNotified': '후원사 등록 안내 받기',
-    'sponsorship.notifyDesc': '행사 후원에 관심이 있으신사가요?, 이메일로 연락 주시면, 후원사 프로그램 정보가 나올 때 먼저 알려드리겠습니다.',
-    'sponsorship.notifyContact': '후원사 등록 알림 요청하기'
+    'sponsorship.tagline': '지금 후원사로 등록하세요',
+    'sponsorship.desc': 'UbuCon Korea 2023에 후원하고, 우분투 커뮤니티에서의 후원사 브랜딩을 강화하거나, 새로운 동료를 채용하세요.',
+    'sponsorship.details': '후원사 등록하기'
   },
   en: {
     'eventMeta.date': '9th September 2023',
@@ -27,9 +27,9 @@ export const ui = {
     'intro.uca23': "Following last year's UbuCon Asia, UbuCon Korea will be held.",
     'intro.uca23desc': 'Coming this fall in Seoul. More information will be on this website soon. Login to our forum and enable notification to get notified for updates.',
     'intro.visitForum':'Visit Ubuntu Korea Community Forum',
-    'sponsorship.getNotified': 'Get notified for Sponsorship informations',
-    'sponsorship.notifyDesc': 'Interested to sponsor us?, Contact us with Email, We will notify you once Sponsorship informations are ready.',
-    'sponsorship.notifyContact': 'Contact us to get notified'
+    'sponsorship.tagline': 'Become a sponsor today',
+    'sponsorship.desc': 'Sponsor UbuCon Korea 2023 to empower your branding in Ubuntu Community and hire new people.', 
+    'sponsorship.details': 'Become a sponsor'
   },
 
 } as const;
