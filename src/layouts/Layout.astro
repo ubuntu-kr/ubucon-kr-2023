@@ -7,25 +7,108 @@ export interface Props {
 
 const { title } = Astro.props;
 
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+import {
+	Navigation,
+	Strip,
+	Col,
+	Button,
+	List,
+} from "@canonical/react-components";
+import LanguagePicker from "../components/LanguagePicker.jsx";
+export function getStaticPaths() {
+	return [{ params: { lang: "en" } }, { params: { lang: "ko" } }];
+}
 ---
 
 <!DOCTYPE html>
 <html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content=`${t('eventMeta.date')}, ${t('eventMeta.venue')}` />
+		<meta
+			name="description"
+			content=`${t('eventMeta.date')}, ${t('eventMeta.venue')}`
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<main>
+			<Navigation
+				items={[]}
+				itemsRight={[
+					{
+						label: "ubuntu-kr.org",
+						url: "https://ubuntu-kr.org",
+					},
+				]}
+				logo={{
+					src: "/UbuntuKrCircleWhite.svg",
+					title: "UbuCon Korea 2023",
+					url: "#",
+				}}
+				theme="dark"
+			/>
+			<slot />
+			<footer class="l-footer--sticky p-strip--light">
+				<nav class="row" aria-label="Footer">
+					<div class="has-cookie">
+						<p>
+							© 2023 우분투한국커뮤니티. 우분투(Ubuntu) 및
+							캐노니컬(Canonical)은 Canonical Ltd.의 등록
+							상표입니다.
+						</p>
+						<ul class="p-inline-list--middot">
+							<li class="p-inline-list__item">
+								<a
+									href="https://disclosures.ubuntu-kr.org/legal/"
+									>정관 및 세칙</a
+								>
+							</li>
+							<li class="p-inline-list__item">
+								<a href="https://fb.com/ubuntukorea">Facebook</a
+								>
+							</li>
+							<li class="p-inline-list__item">
+								<a href="https://twitter.com/UbuntuKrOrg"
+									>Twitter</a
+								>
+							</li>
+							<li class="p-inline-list__item">
+								<a
+									href="https://www.linkedin.com/company/ubuntu-kr/"
+									>LinkedIn</a
+								>
+							</li>
+							<li class="p-inline-list__item">
+								<a href="https://mastodon.social/@UbuntuKrOrg"
+									>Mastodon</a
+								>
+							</li>
+							<li class="p-inline-list__item">
+								<a
+									href="https://staging.bsky.app/profile/ubuntu-kr.org"
+									>Bluesky</a
+								>
+							</li>
+							<li class="p-inline-list__item">
+								<a
+									href="https://github.com/ubuntu-kr/ubucon-kr-2023/issues/new/choose"
+									>웹사이트에 대한 버그 보고</a
+								>
+							</li>
+						</ul>
+					</div>
+					<LanguagePicker client:only="react" />
+				</nav>
+			</footer>
+		</main>
 	</body>
 </html>
 <style is:global>

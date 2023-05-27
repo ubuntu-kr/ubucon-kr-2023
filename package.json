@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^0.19.4",
     "@astrojs/react": "^2.2.0",
     "@canonical/react-components": "^0.41.0",
     "@types/react": "^18.2.6",
