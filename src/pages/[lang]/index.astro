@@ -7,7 +7,7 @@ import {
 	Button,
 	List,
 } from "@canonical/react-components";
-
+import DiscourseNoticeBanner from "../../components/DiscourseNoticeBanner.jsx";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -28,6 +28,12 @@ export function getStaticPaths() {
 			<img src="/logo.svg" alt="Placeholder" />
 		</Col>
 	</Strip>
+	<DiscourseNoticeBanner
+		baseUrl="https://discourse.ubuntu-kr.org"
+		jsonFeedEndpoint="/c/notice/9.json"
+		topicTag="ubucon-korea"
+		client:only="react"
+	/>
 	<Strip bordered element="section" includeCol={false}>
 		<section class="p-section">
 			<div class="p-block">
@@ -66,11 +72,7 @@ export function getStaticPaths() {
 						<p>
 							{t("sponsorship.desc")}
 						</p>
-						<Button
-							appearance=""
-							element={"a"}
-							href="sponsor"
-						>
+						<Button appearance="" element={"a"} href="sponsor">
 							{t("sponsorship.details")}
 						</Button>
 					</div>
