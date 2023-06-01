@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export default function DiscourseNoticeBanner(props) {
     const { topicList, setTopicList } = useState([]);
     useEffect(() => {
-        fetch(`${props.baseUrl}${props.jsonFeedEndpoint}`, {"mode":"no-cors"})
+        fetch(`${props.baseUrl}${props.jsonFeedEndpoint}`)
             .then(res => res.json()).then(data => {
                 console.log("data fetched")
                 let topics = data["topic_list"]["topics"];
