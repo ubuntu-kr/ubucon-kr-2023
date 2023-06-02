@@ -14,7 +14,7 @@ export default function DiscourseNoticeBanner(props) {
                     .map(item => {
                         return {
                             title: item["title"],
-                            date: item["last_posted_at"],
+                            date: new Date(item["last_posted_at"]).toLocaleString(),
                             url: `${props.baseUrl}/t/${item["slug"]}/${item["id"]}`,
                         };
                     });
