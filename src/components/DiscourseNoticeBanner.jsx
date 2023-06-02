@@ -3,7 +3,7 @@ import { Strip, Row, Col } from "@canonical/react-components";
 import { useState, useEffect } from "react";
 
 export default function DiscourseNoticeBanner(props) {
-    const { topicList, setTopicList } = useState([]);
+    const [ topicList, setTopicList ] = useState([]);
     useEffect(() => {
         fetch(`${props.baseUrl}${props.jsonFeedEndpoint}`)
             .then(res => res.json()).then(data => {
