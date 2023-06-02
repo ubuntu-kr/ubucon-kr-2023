@@ -10,7 +10,7 @@ export default function DiscourseNoticeBanner(props) {
                 console.log("data fetched")
                 let topics = data["topic_list"]["topics"];
                 let filteredTopics = topics
-                    .filter(item => item["tags"].contains(props.topicTag))
+                    .filter(item => item["tags"].includes(props.topicTag))
                     .map(item => {
                         return {
                             title: item["title"],
