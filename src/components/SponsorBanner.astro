@@ -1,18 +1,10 @@
 ---
 import {
-	Navigation,
 	Strip,
-	Col,
-	Button,
-	List,
 } from "@canonical/react-components";
-import { getCollection, getEntry } from "astro:content";
-// import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-// const lang = getLangFromUrl(Astro.url);
-// const t = useTranslations(lang);
-// export function getStaticPaths() {
-// 	return [{ params: { lang: "en" } }, { params: { lang: "ko" } }];
-// }
+import { getCollection } from "astro:content";
+import { getLangFromUrl } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
 
 const sponsors = await getCollection("sponsors");
 
@@ -35,11 +27,14 @@ const sponsorClassList = [
 						<div class="p-logo-section__items">
 							{sponsors
 								.filter(
-									(sponsor) =>
-										sponsor.data.class === className
+									(sponsor) => {
+										const [itemLang, ...slug] = sponsor.slug.split('/');
+										return sponsor.data.class === className && itemLang === lang;
+									}
+										
 								)
 								.map((sponsor) => {
-									const [lang, ...slug] = sponsor.slug.split('/');
+									const [itemLang, ...slug] = sponsor.slug.split('/');
 									return (
 									<div class="p-logo-section__item">
 										<a href={`sponsors/${slug}`}>
