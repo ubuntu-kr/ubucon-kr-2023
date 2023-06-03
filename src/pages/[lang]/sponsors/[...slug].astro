@@ -1,0 +1,64 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import {
+    Navigation,
+    Strip,
+    Col,
+    Button,
+    List,
+} from "@canonical/react-components";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const pages = await getCollection("sponsors");
+
+    const paths = pages.map((page) => {
+        const [lang, ...slug] = page.slug.split("/");
+        return {
+            params: { lang, slug: slug.join("/") || undefined },
+            props: page,
+        };
+    });
+
+    return paths;
+}
+
+const { lang, slug } = Astro.params;
+const page = Astro.props;
+
+const { Content } = await page.render();
+const sponsorColorMap = {
+    Diamond: "diamond",
+    Venue: "silver",
+    Gold: "gold",
+    Silver: "silver",
+    Bronze: "bronze",
+    Supporter: "orange",
+};
+---
+
+<Layout title={`${page.data.title} - UbuCon Korea 2023`}>
+    <Strip type="suru-topped" includeCol={false}>
+        <Col size={8}>
+            <button
+                class="p-chip"
+                style={{ backgroundColor: sponsorColorMap[page.data.class] }}
+            >
+                <span class="p-chip__value">{`${page.data.class} Sponsor`}</span
+                >
+            </button>
+            <h1>{page.data.title}</h1>
+            <Button element="a" href={page.data.sponsorUrl}>
+                {page.data.buttonLabel}
+            </Button>
+        </Col>
+        <Col size={4}>
+            <img src={page.data.logo} alt="" />
+        </Col>
+    </Strip>
+    <Strip>
+        <Col size={12}>
+            <Content />
+        </Col>
+    </Strip>
+</Layout>

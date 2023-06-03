@@ -11,13 +11,9 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
+import SponsorBanner from "../components/SponsorBanner.astro";
 import {
 	Navigation,
-	Strip,
-	Col,
-	Button,
-	List,
 } from "@canonical/react-components";
 import LanguagePicker from "../components/LanguagePicker.jsx";
 export function getStaticPaths() {
@@ -56,6 +52,7 @@ export function getStaticPaths() {
 				theme="dark"
 			/>
 			<slot />
+			<SponsorBanner/>
 			<footer class="l-footer--sticky p-strip--light">
 				<nav class="row" aria-label="Footer">
 					<div class="has-cookie">

@@ -8,12 +8,14 @@ import {
 	List,
 } from "@canonical/react-components";
 import DiscourseNoticeBanner from "../../components/DiscourseNoticeBanner.jsx";
+import { getCollection, getEntry } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 export function getStaticPaths() {
 	return [{ params: { lang: "en" } }, { params: { lang: "ko" } }];
 }
+
 ---
 
 <Layout title="UbuCon Korea 2023">
@@ -50,11 +52,7 @@ export function getStaticPaths() {
 						<p>
 							{t("cfp.desc")}
 						</p>
-						<Button
-							appearance=""
-							element={"a"}
-							href="/cfp"
-						>
+						<Button appearance="" element={"a"} href="/cfp">
 							{t("cfp.submit")}
 						</Button>
 					</div>
@@ -80,6 +78,5 @@ export function getStaticPaths() {
 			</div>
 		</section>
 	</Strip>
-
 	<style></style>
 </Layout>
