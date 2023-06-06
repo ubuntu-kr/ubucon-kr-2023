@@ -12,9 +12,7 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 import SponsorBanner from "../components/SponsorBanner.astro";
-import {
-	Navigation,
-} from "@canonical/react-components";
+import NavigationMenu from "../components/NavigationMenu.jsx";
 import LanguagePicker from "../components/LanguagePicker.jsx";
 export function getStaticPaths() {
 	return [{ params: { lang: "en" } }, { params: { lang: "ko" } }];
@@ -36,20 +34,9 @@ export function getStaticPaths() {
 	</head>
 	<body>
 		<main>
-			<Navigation
-				items={[]}
-				itemsRight={[
-					{
-						label: "ubuntu-kr.org",
-						url: "https://ubuntu-kr.org",
-					},
-				]}
-				logo={{
-					src: "/UbuntuKrCircleWhite.svg",
-					title: "UbuCon Korea 2023",
-					url: "/",
-				}}
-				theme="dark"
+			<NavigationMenu
+				lang={lang}
+				client:only="react"
 			/>
 			<slot />
 			<SponsorBanner/>
