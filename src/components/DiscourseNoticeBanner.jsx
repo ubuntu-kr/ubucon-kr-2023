@@ -37,7 +37,7 @@ export default function DiscourseNoticeBanner(props) {
                     </Col>
                 ))}
             </Row>
-            <Row>
+            <Row style={{marginTop: "1em"}}>
                 <Col size={12} className="u-align-text--right">
                     <Button
                         appearance=""
