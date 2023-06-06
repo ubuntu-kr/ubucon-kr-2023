@@ -22,7 +22,7 @@ export default function DiscourseNoticeBanner(props) {
                         };
                     }).slice(0, 3);
                 setTopicList(filteredTopics);
-                setMoreTopic(data["topic_list"]["more_topics_url"]);
+                setMoreTopic(`${props.baseUrl}${data["topic_list"]["more_topics_url"]}`);
             })
     }, [])
     return (
