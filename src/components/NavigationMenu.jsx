@@ -10,6 +10,10 @@ export default function NavigationMenu(props) {
     return(
         <Navigation
 			items={[
+				{
+					label: `${t("navigation.about")}`,
+					url: `/${props.lang}/about`
+				}
 			]}
 			itemsRight={[
 				{
