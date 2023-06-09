@@ -22,7 +22,10 @@ export const ui = {
     'cfp.desc': '우분투를 개발 생산상을 향상하는데 활용해 본 경험이 있거나, 우분투 및 관련 오픈소스와 관련하여 공유하고 싶은 경험이 있다면, 오늘 발표 제안을 제출하여 발표자로 지원 해 보세요!',
     'cfp.submit': '제안서 제출하기',
     'discourseNoticeBanner.moreTopics': '더 보기',
-    'navigation.about': '소개'
+    'navigation.about': '소개',
+    'navigation.program': '프로그램',
+    'navigation.sponsor': '후원사',
+    'navigation.becomeSponsor': '후원사 등록 안내'
   },
   en: {
     'eventMeta.date': '9th September 2023',
@@ -39,7 +42,10 @@ export const ui = {
     'cfp.desc': 'If you have any experience on boosting your developer productivity using Ubuntu, or have your own unique experience around Ubuntu and FOSS to share, Submit your proposal today and become a speaker!',
     'cfp.submit': 'Submit proposal',
     'discourseNoticeBanner.moreTopics': 'More Topics',
-    'navigation.about': 'About'
+    'navigation.about': 'About',
+    'navigation.program': 'Program',
+    'navigation.sponsor': 'Sponsors',
+    'navigation.becomeSponsor': 'Become a sponsor'
   },
 
 } as const;

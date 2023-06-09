@@ -13,6 +13,24 @@ export default function NavigationMenu(props) {
 				{
 					label: `${t("navigation.about")}`,
 					url: `/${props.lang}/about`
+				},
+				{
+					items: [
+						{
+							label: `${t("cfp.title")}`,
+							url: `/${props.lang}/cfp`
+						}
+					],
+					label: `${t("navigation.program")}`
+				},
+				{
+					items: [
+						{
+							label: `${t("navigation.becomeSponsor")}`,
+							url: `/${props.lang}/sponsor`
+						}
+					],
+					label: `${t("navigation.sponsor")}`
 				}
 			]}
 			itemsRight={[
