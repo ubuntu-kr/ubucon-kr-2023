@@ -5,7 +5,6 @@ interface Props {
     image: string;
     name: string;
     community: string;
-    area: string[];
     role: string[];
 }
 ---
@@ -14,9 +13,8 @@ interface Props {
     <img class="p-media-object__image is-round" src={image} alt="" />
     <div class="p-media-object__details">
         <h3>{name}</h3>
-        <p class="p-media-object__content">{community}</p>
+        <p class="p-media-object__content">{community ? community : "N/A"}</p>
         <p class="p-media-object__content">
-            {Array.isArray(area) ? area.join("/") : area} team | 
             {Array.isArray(role) ? role.join(", ") : role}
         </p>
     </div>
