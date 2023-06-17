@@ -18,7 +18,7 @@ export default function NavigationMenu(props) {
 					items: [
 						{
 							label: `${t("cfp.title")}`,
-							url: `/${props.lang}/cfp`
+							url: `/cfp`
 						}
 					],
 					label: `${t("navigation.program")}`
