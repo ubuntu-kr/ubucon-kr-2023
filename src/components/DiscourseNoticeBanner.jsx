@@ -1,19 +1,16 @@
-
 import { Strip, Row, Col, Button } from "@canonical/react-components";
 import { useState, useEffect } from "react";
 import { useTranslations } from "../i18n/utils";
 
 export default function DiscourseNoticeBanner(props) {
     const [ topicList, setTopicList ] = useState([]);
-    const [ moreTopic, setMoreTopic ] = useState([]);
     const t = useTranslations(props.lang);
     useEffect(() => {
-        fetch(`${props.baseUrl}${props.jsonFeedEndpoint}`)
+        fetch(`${props.baseUrl}${props.topicBoardEndpoint}${props.topicTag}.json?order=created`)
             .then(res => res.json()).then(data => {
                 console.log("data fetched")
-                let topics = data["topic_list"]["topics"];
-                let filteredTopics = topics
-                    .filter(item => item["tags"].includes(props.topicTag))
+                const topics = data["topic_list"]["topics"];
+                const mappedTopics = topics
                     .map(item => {
                         return {
                             title: item["title"],
@@ -21,8 +18,7 @@ export default function DiscourseNoticeBanner(props) {
                             url: `${props.baseUrl}/t/${item["slug"]}/${item["id"]}`,
                         };
                     }).slice(0, 3);
-                setTopicList(filteredTopics);
-                setMoreTopic(`${props.baseUrl}${data["topic_list"]["more_topics_url"]}`);
+                setTopicList(mappedTopics);
             })
     }, [])
     return (
@@ -42,7 +38,7 @@ export default function DiscourseNoticeBanner(props) {
                     <Button
                         appearance=""
                         element="a"
-                        href={moreTopic}
+                        href={`${props.baseUrl}${props.topicBoardEndpoint}${props.topicTag}`}
                     >
                         {t("discourseNoticeBanner.moreTopics")}
                     </Button>
