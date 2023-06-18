@@ -5,8 +5,11 @@ import { useState } from "react";
 
 export default function LanguagePicker(props) {
   let langSelectList = Object.entries(languages).map(([lang, label]) => {
+    const newPage = props.page.split("/").slice();
+    newPage[1] = lang;
+
     return (
-      <a href={`/${lang}/`}>{label}</a>
+      <a href={`${newPage.join("/")}`}>{label}</a>
     );
   });
   const [modalOpen, setModalOpen] = useState(false);

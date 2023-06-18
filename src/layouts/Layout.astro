@@ -89,7 +89,7 @@ export function getStaticPaths() {
 							</li>
 						</ul>
 					</div>
-					<LanguagePicker client:only="react" />
+					<LanguagePicker page={Astro.url.pathname} client:only="react" />
 				</nav>
 			</footer>
 		</main>
