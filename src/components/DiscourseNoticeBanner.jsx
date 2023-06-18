@@ -5,7 +5,6 @@ import { useTranslations } from "../i18n/utils";
 
 export default function DiscourseNoticeBanner(props) {
     const [ topicList, setTopicList ] = useState([]);
-    const [ moreTopic, setMoreTopic ] = useState([]);
     const t = useTranslations(props.lang);
     useEffect(() => {
         fetch(`${props.baseUrl}${props.jsonFeedEndpoint}`)
@@ -22,7 +21,6 @@ export default function DiscourseNoticeBanner(props) {
                         };
                     }).slice(0, 3);
                 setTopicList(filteredTopics);
-                setMoreTopic(`${props.baseUrl}${data["topic_list"]["more_topics_url"]}`);
             })
     }, [])
     return (
@@ -42,7 +40,7 @@ export default function DiscourseNoticeBanner(props) {
                     <Button
                         appearance=""
                         element="a"
-                        href={moreTopic}
+                        href={`${props.baseUrl}/tag/${props.topicTag}`}
                     >
                         {t("discourseNoticeBanner.moreTopics")}
                     </Button>
