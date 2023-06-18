@@ -6,7 +6,7 @@ export default function DiscourseNoticeBanner(props) {
     const [ topicList, setTopicList ] = useState([]);
     const t = useTranslations(props.lang);
     useEffect(() => {
-        fetch(`${props.baseUrl}${props.topicBoardEndpoint}${props.topicTag}.json?order=created`)
+        fetch(`${props.baseUrl}${props.topicEndpoint}.json?order=created`)
             .then(res => res.json()).then(data => {
                 console.log("data fetched")
                 const topics = data["topic_list"]["topics"];
@@ -38,7 +38,7 @@ export default function DiscourseNoticeBanner(props) {
                     <Button
                         appearance=""
                         element="a"
-                        href={`${props.baseUrl}${props.topicBoardEndpoint}${props.topicTag}`}
+                        href={`${props.baseUrl}${props.topicEndpoint}`}
                     >
                         {t("discourseNoticeBanner.moreTopics")}
                     </Button>
