@@ -1,0 +1,21 @@
+---
+const {image, name, community, role} = Astro.props;
+
+interface Props {
+    image: string;
+    name: string;
+    community: string;
+    role: string[];
+}
+---
+
+<div class="p-media-object--large">
+    <img class="p-media-object__image is-round" src={image} alt="" />
+    <div class="p-media-object__details">
+        <h3>{name}</h3>
+        <p class="p-media-object__content">{community ? community : "N/A"}</p>
+        <p class="p-media-object__content">
+            {Array.isArray(role) ? role.join(", ") : role}
+        </p>
+    </div>
+</div>

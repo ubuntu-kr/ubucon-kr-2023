@@ -10,6 +10,28 @@ export default function NavigationMenu(props) {
     return(
         <Navigation
 			items={[
+				{
+					label: `${t("navigation.about")}`,
+					url: `/${props.lang}/about`
+				},
+				{
+					items: [
+						{
+							label: `${t("cfp.title")}`,
+							url: `/cfp`
+						}
+					],
+					label: `${t("navigation.program")}`
+				},
+				{
+					items: [
+						{
+							label: `${t("navigation.becomeSponsor")}`,
+							url: `/${props.lang}/sponsor`
+						}
+					],
+					label: `${t("navigation.sponsor")}`
+				}
 			]}
 			itemsRight={[
 				{
