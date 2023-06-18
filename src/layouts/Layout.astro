@@ -11,7 +11,6 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const page = Astro.url.pathname.split("/");
 import SponsorBanner from "../components/SponsorBanner.astro";
 import NavigationMenu from "../components/NavigationMenu.jsx";
 import LanguagePicker from "../components/LanguagePicker.jsx";
@@ -90,7 +89,7 @@ export function getStaticPaths() {
 							</li>
 						</ul>
 					</div>
-					<LanguagePicker page={page} client:only="react" />
+					<LanguagePicker page={Astro.url.pathname} client:only="react" />
 				</nav>
 			</footer>
 		</main>

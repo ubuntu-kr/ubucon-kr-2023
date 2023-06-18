@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function LanguagePicker(props) {
   let langSelectList = Object.entries(languages).map(([lang, label]) => {
-    const newPage = props.page.slice();
+    const newPage = props.page.split("/").slice();
     newPage[1] = lang;
 
     return (
