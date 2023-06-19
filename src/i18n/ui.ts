@@ -19,7 +19,7 @@ export const ui = {
     'sponsorship.desc': 'UbuCon Korea 2023에 후원하고, 우분투 커뮤니티에서의 후원사 브랜딩을 강화하거나, 새로운 동료를 채용하세요.',
     'sponsorship.details': '후원사 등록하기',
     'cfp.title': '발표 제안 제출하기',
-    'cfp.desc': '우분투를 개발 생산상을 향상하는데 활용해 본 경험이 있거나, 우분투 및 관련 오픈소스와 관련하여 공유하고 싶은 경험이 있다면, 오늘 발표 제안을 제출하여 발표자로 지원 해 보세요!',
+    'cfp.desc': '우분투를 개발 생산성 향상에 활용해 본 경험이 있거나, 우분투 및 관련 오픈소스와 연관하여 공유하고 싶은 경험이 있다면, 오늘 발표 제안을 제출하여 발표자로 지원 해 보세요!',
     'cfp.submit': '제안서 제출하기',
     'discourseNoticeBanner.moreTopics': '더 보기',
     'navigation.about': '소개',
