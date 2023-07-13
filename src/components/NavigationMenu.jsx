@@ -35,6 +35,10 @@ export default function NavigationMenu(props) {
 			]}
 			itemsRight={[
 				{
+					label: "🎫",
+					url: `/tickets`
+				},
+				{
 					label: "ubuntu-kr.org",
 					url: "https://ubuntu-kr.org",
 				}
