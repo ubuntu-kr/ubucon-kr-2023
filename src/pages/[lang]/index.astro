@@ -25,6 +25,9 @@ export function getStaticPaths() {
 			<h1>{t("eventMeta.theme")}</h1>
 			<h1>{t("eventMeta.date")}</h1>
 			<h1>{t("eventMeta.venue")}</h1>
+			<Button appearance="" element={"a"} href="/tickets">
+				{t("tickets.details")}
+			</Button>	
 		</Col>
 		<Col size={4}>
 			<img src="/logo.svg" alt="Placeholder" />
@@ -38,6 +41,24 @@ export function getStaticPaths() {
 	/>
 	<Strip bordered element="section" includeCol={false}>
 		<section class="p-section">
+			<div class="p-block">
+				<div class="row">
+					<hr class="p-rule" />
+				</div>
+				<div class="row--50-50">
+					<div class="col">
+						<h2>{t("tickets.tagline")}</h2>
+					</div>
+					<div class="col">
+						<p>
+							{t("tickets.desc")}
+						</p>
+						<Button appearance="" element={"a"} href="sponsor">
+							{t("tickets.details")}
+						</Button>
+					</div>
+				</div>
+			</div>
 			<div class="p-block">
 				<div class="row">
 					<hr class="p-rule" />
