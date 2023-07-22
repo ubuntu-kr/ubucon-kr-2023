@@ -1,0 +1,51 @@
+---
+import data from "../data/sessions.json";
+import { Strip, Row, Col, Button, List } from "@canonical/react-components";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const { baseUrl, sessionEndpoint } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const sessions = data.results[0].contributions;
+
+const sessionList = sessions.map(item => {
+	return {
+		title: item["title"],
+		type: item["type"],
+		speaker: item["speakers"][0]["fullName"],
+		imgId: null,
+		url: item["url"]
+	};
+}).slice(0, 4);
+---
+
+<Strip element="section">
+	<h2>{t("featured.tagline")}</h2>		
+	<Row>
+		{sessionList.map(item => (
+			<Col size={6}>
+				<div class="p-media-object--large">
+					<img class="p-media-object__image is-round" src={item.imgId ? `/speakers/${item.imgId}.png` : "/speakers/default.png"} alt="" />
+					<div class="p-media-object__details">
+						<a href={item.url}>
+							<h3>{item.speaker}</h3>
+						</a>
+						<p class="p-media-object__content">{item.title}</p>
+					</div>
+				</div>
+			</Col>
+		))}
+	</Row>
+	<Row style={{marginTop: "1em"}}>
+		<Col size={12} className="u-align-text--right">
+			<Button
+				appearance=""
+				element="a"
+				href={`${baseUrl}${sessionEndpoint}/contributions`}
+			>
+				{t("featured.details")}
+			</Button>
+		</Col>
+	</Row>
+</Strip>

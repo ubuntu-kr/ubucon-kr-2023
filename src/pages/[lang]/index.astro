@@ -7,6 +7,7 @@ import {
 	Button,
 	List,
 } from "@canonical/react-components";
+import FeaturedSessions from "../../components/FeaturedSessions.astro";
 import DiscourseNoticeBanner from "../../components/DiscourseNoticeBanner.jsx";
 import { getCollection, getEntry } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
@@ -33,6 +34,11 @@ export function getStaticPaths() {
 			<img src="/logo.svg" alt="Placeholder" />
 		</Col>
 	</Strip>
+	<FeaturedSessions 
+		baseUrl="https://events.canonical.com"
+		sessionEndpoint="/event/32"
+		lang={lang}
+	/>
 	<DiscourseNoticeBanner
 		baseUrl="https://discourse.ubuntu-kr.org"
 		topicEndpoint="/tags/c/notice/9/ubucon-kr-2023"
@@ -53,7 +59,7 @@ export function getStaticPaths() {
 						<p>
 							{t("tickets.desc")}
 						</p>
-						<Button appearance="" element={"a"} href="/tickets">
+						<Button appearance="" element={"a"} href="sponsor">
 							{t("tickets.details")}
 						</Button>
 					</div>
