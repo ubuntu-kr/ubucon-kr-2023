@@ -1,0 +1,31 @@
+---
+import Layout from "./Layout.astro";
+import {
+    Navigation,
+    Strip,
+    Col,
+    Button,
+    List,
+} from "@canonical/react-components";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+    <Strip type="suru" element="section" includeCol={false}>
+        <Col size={8}>
+            <h2>{frontmatter.title}</h2>
+            <p>{frontmatter.description}</p>
+        </Col>
+    </Strip>
+    <Strip bordered element="section" includeCol={false}>
+        <Col size={12}>
+            <slot />
+        </Col>
+    </Strip>
+    <style></style>
+</Layout>

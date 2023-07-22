@@ -19,6 +19,14 @@ export default function NavigationMenu(props) {
 						{
 							label: `${t("cfp.title")}`,
 							url: `/cfp`
+						},
+						{
+							label: `${t("navigation.sessions")}`,
+							url: `https://events.canonical.com/event/32/contributions`	
+						},
+						{
+							label: `${t("navigation.timetable")}`,
+							url: `https://events.canonical.com/event/32/timetable/`
 						}
 					],
 					label: `${t("navigation.program")}`
@@ -28,6 +36,10 @@ export default function NavigationMenu(props) {
 						{
 							label: `${t("navigation.becomeSponsor")}`,
 							url: `/${props.lang}/sponsor`
+						},
+						{
+							label: `${t("navigation.patrons")}`,
+							url: `/${props.lang}/patrons`
 						}
 					],
 					label: `${t("navigation.sponsor")}`
