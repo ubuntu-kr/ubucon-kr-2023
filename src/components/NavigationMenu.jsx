@@ -58,7 +58,7 @@ export default function NavigationMenu(props) {
 			logo={{
 				src: "/UbuntuKrCircleWhite.svg",
 				title: "UbuCon Korea 2023",
-				url: "/",
+				url: `/${props.lang}`,
 			}}
 			theme="dark"
 		/>
