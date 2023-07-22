@@ -14,7 +14,7 @@ const sessionList = sessions.map(item => {
 		title: item["title"],
 		type: item["type"],
 		speaker: item["speakers"][0]["fullName"],
-		imgId: null,
+		imgId: item["speakers"][0]["person_id"],
 		url: item["url"]
 	};
 }).slice(0, 4);
