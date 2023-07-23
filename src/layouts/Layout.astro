@@ -43,16 +43,12 @@ export function getStaticPaths() {
 			<footer class="l-footer--sticky p-strip--light">
 				<nav class="row" aria-label="Footer">
 					<div class="has-cookie">
-						<p>
-							© 2023 우분투한국커뮤니티. 우분투(Ubuntu) 및
-							캐노니컬(Canonical)은 Canonical Ltd.의 등록
-							상표입니다.
-						</p>
+						<p>© 2023 {t("footer.desc")}</p>
 						<ul class="p-inline-list--middot">
 							<li class="p-inline-list__item">
 								<a
 									href="https://disclosures.ubuntu-kr.org/legal/"
-									>정관 및 세칙</a
+									>{t("footer.legal")}</a
 								>
 							</li>
 							<li class="p-inline-list__item">
@@ -84,7 +80,7 @@ export function getStaticPaths() {
 							<li class="p-inline-list__item">
 								<a
 									href="https://github.com/ubuntu-kr/ubucon-kr-2023/issues/new/choose"
-									>웹사이트에 대한 버그 보고</a
+									>{t("footer.bug")}</a
 								>
 							</li>
 						</ul>
