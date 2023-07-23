@@ -32,8 +32,7 @@ export const ui = {
     'navigation.sessions': '세션 목록',
     'navigation.timetable': '시간표',
     'navigation.sponsor': '후원사/개인 후원',
-    'navigation.patrons': '개인 후원자',
-    'navigation.members': '회비 회원',
+    'navigation.patrons': '개인 후원자 및 회비 회원',
     'navigation.becomeSponsor': '후원사 등록 안내'
   },
   en: {
@@ -61,8 +60,7 @@ export const ui = {
     'navigation.sessions': 'Sessions',
     'navigation.timetable': 'Timetable',
     'navigation.sponsor': 'Sponsors/Patrons',
-    'navigation.patrons': 'Individual patrons',
-    'navigation.members': 'Community Members',
+    'navigation.patrons': 'Individual patrons and Community Members',
     'navigation.becomeSponsor': 'Become a sponsor'
   },
 
