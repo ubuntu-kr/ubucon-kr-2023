@@ -15,6 +15,8 @@ export const ui = {
     'intro.uca23': '작년 UbuCon Asia에 이어, 올해는 UbuCon Korea가 열립니다.',
     'intro.uca23desc': '작년에 이어 서울에서 오는 가을에 열립니다. 자세한 사항은 곧 이 웹사이트에 업데이트 됩니다. 포럼에 로그인 후 알림 설정을 하시면, 업데이트를 받으실 수 있습니다.',
     'intro.visitForum':'우분투한국커뮤니티 포럼 방문',
+    'featured.tagline': '주요 세션',
+    'featured.details': '모든 세션',
     'sponsorship.tagline': '지금 후원사로 등록하세요',
     'sponsorship.desc': 'UbuCon Korea 2023에 후원하고, 우분투 커뮤니티에서의 후원사 브랜딩을 강화하거나, 새로운 동료를 채용하세요.',
     'sponsorship.details': '후원사 등록하기',
@@ -27,7 +29,11 @@ export const ui = {
     'discourseNoticeBanner.moreTopics': '더 보기',
     'navigation.about': '소개',
     'navigation.program': '프로그램',
-    'navigation.sponsor': '후원사',
+    'navigation.sessions': '세션 목록',
+    'navigation.timetable': '시간표',
+    'navigation.sponsor': '후원사/개인 후원',
+    'navigation.patrons': '개인 후원자',
+    'navigation.members': '회비 회원',
     'navigation.becomeSponsor': '후원사 등록 안내'
   },
   en: {
@@ -38,6 +44,8 @@ export const ui = {
     'intro.uca23': "Following last year's UbuCon Asia, UbuCon Korea will be held.",
     'intro.uca23desc': 'Coming this fall in Seoul. More information will be on this website soon. Login to our forum and enable notification to get notified for updates.',
     'intro.visitForum':'Visit Ubuntu Korea Community Forum',
+    'featured.tagline': 'Featured Sessions',
+    'featured.details': 'All sessions',
     'sponsorship.tagline': 'Become a sponsor today',
     'sponsorship.desc': 'Sponsor UbuCon Korea 2023 to empower your branding in Ubuntu Community and hire new people.', 
     'sponsorship.details': 'Become a sponsor',
@@ -50,7 +58,11 @@ export const ui = {
     'discourseNoticeBanner.moreTopics': 'More Topics',
     'navigation.about': 'About',
     'navigation.program': 'Program',
-    'navigation.sponsor': 'Sponsors',
+    'navigation.sessions': 'Sessions',
+    'navigation.timetable': 'Timetable',
+    'navigation.sponsor': 'Sponsors/Patrons',
+    'navigation.patrons': 'Individual patrons',
+    'navigation.members': 'Community Members',
     'navigation.becomeSponsor': 'Become a sponsor'
   },
 

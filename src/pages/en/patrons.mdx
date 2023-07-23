@@ -1,0 +1,26 @@
+---
+layout: ../../layouts/PatronsLayout.astro
+title: Individual patrons
+---
+import patrons from "../../data/patrons.json";
+import {
+	Strip,
+	Col,
+    Row,
+    Card
+} from "@canonical/react-components";
+
+People listed below are Individual patrons of UbuCon Korea 2023.
+<br />We got total {patrons.length} individual patron{patrons.length > 1 ? "s":""} this year!
+<br />Thanks to every patrons for supporting our event!
+
+(Note: Only patrons who agreed to display their names are displayed here.)
+
+<Row>
+    {patrons.map((person) => (
+        <div className="p-card col-4">
+            <h3>{person.name}</h3>
+            <p>{person.org_and_title}</p>
+        </div>
+    ))}
+</Row>
