@@ -8,12 +8,20 @@ const { baseUrl, sessionEndpoint } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const sessions = data.results ? data.results[0].contributions : null;
+const imgList = [182, 189, 190, 203, 209, 210, 219, 272, 288, 290, 298, 299]
 
 const sessionList = sessions ? sessions.map(item => {
+	const speakers = [item["speakers"][0]["fullName"]];
+	if (item["speakers"].length > 1) {
+		for (let speaker = 1; speaker < item["speakers"].length; speaker++) {
+			speakers.push(item["speakers"][speaker]["fullName"]);
+		}
+	}
+
 	return {
 		title: item["title"],
 		type: item["type"],
-		speaker: item["speakers"][0]["fullName"],
+		speaker: speakers.join("·"),
 		imgId: item["speakers"][0]["person_id"],
 		url: item["url"]
 	};
@@ -26,7 +34,8 @@ const sessionList = sessions ? sessions.map(item => {
 		{sessionList ? sessionList.map(item => (
 			<Col size={6}>
 				<div class="p-media-object--large">
-					<img class="p-media-object__image is-round" src={item.imgId ? `/speakers/${item.imgId}.png` : "/speakers/default.png"} alt="" />
+					<img class="p-media-object__image is-round" 
+						src={imgList.includes(item.imgId) ? `/speakers/${item.imgId}.png` : "/speakers/default.png"} alt="" />
 					<div class="p-media-object__details">
 						<a href={item.url}>
 							<h3>{item.speaker}</h3>
