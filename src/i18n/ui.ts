@@ -63,7 +63,7 @@ export const ui = {
     'navigation.sessions': 'Sessions',
     'navigation.timetable': 'Timetable',
     'navigation.sponsor': 'Sponsors/Patrons',
-    'navigation.patrons': 'Individual patrons and Community Members',
+    'navigation.patrons': 'Individual patrons and Members with dues',
     'navigation.becomeSponsor': 'Become a sponsor',
     'footer.desc': 'Ubuntu Korea Community. Ubuntu and Canonical are registered trademarks of Canonical Ltd.',
     'footer.legal': 'Bylaws',
