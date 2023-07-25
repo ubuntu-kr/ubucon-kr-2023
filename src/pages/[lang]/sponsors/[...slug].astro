@@ -45,7 +45,7 @@ const sponsorColorMap = {
                 class="p-chip"
                 style={{ backgroundColor: sponsorColorMap[page.data.class] }}
             >
-                <span class="p-chip__value">{`${page.data.class} Sponsor`}</span
+                <span class="p-chip__value">{page.data.class === "Government" ? `${page.data.class} Partner` : `${page.data.class} Sponsor`}</span
                 >
             </button>
             <h1>{page.data.title}</h1>
