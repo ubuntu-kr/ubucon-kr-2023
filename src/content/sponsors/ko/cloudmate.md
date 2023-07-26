@@ -1,5 +1,5 @@
 ---
-title: CloudMate
+title: Cloudmate
 class: Silver
 logo: /sponsors/cloudmate.png
 sponsorUrl: https://cloudmt.co.kr/
