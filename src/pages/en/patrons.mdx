@@ -1,14 +1,17 @@
 ---
 layout: ../../layouts/PatronsLayout.astro
-title: Individual patrons
+title: Individual patrons and Community Members
 ---
 import patrons from "../../data/patrons.json";
+import ubuntukr from "../../data/ubuntukr.json";
 import {
 	Strip,
 	Col,
     Row,
     Card
 } from "@canonical/react-components";
+
+### Individual patrons
 
 People listed below are Individual patrons of UbuCon Korea 2023.
 <br />We got total {patrons.length} individual patron{patrons.length > 1 ? "s":""} this year!
@@ -18,6 +21,23 @@ People listed below are Individual patrons of UbuCon Korea 2023.
 
 <Row>
     {patrons.map((person) => (
+        <div className="p-card col-4">
+            <h3>{person.name}</h3>
+            <p>{person.org_and_title}</p>
+        </div>
+    ))}
+</Row>
+
+### Ubuntu Korea Community Members with dues
+
+People listed below are Ubuntu Korea Community Members with dues who bought tickets to participate in UbuCon Korea 2023.
+<br />We got total {ubuntukr.length} participant{ubuntukr.length > 1 ? "s":""} this year!
+<br />Thanks to every members for supporting our event!
+
+(Note: Only members who agreed to display their names are displayed here.)
+
+<Row>
+    {ubuntukr.map((person) => (
         <div className="p-card col-4">
             <h3>{person.name}</h3>
             <p>{person.org_and_title}</p>

@@ -1,14 +1,17 @@
 ---
 layout: ../../layouts/PatronsLayout.astro
-title: 개인 후원자
+title: 개인 후원자 및 회비 회원
 ---
 import patrons from "../../data/patrons.json";
+import ubuntukr from "../../data/ubuntukr.json";
 import {
 	Strip,
 	Col,
     Row,
     Card
 } from "@canonical/react-components";
+
+### 개인 후원자
 
 아래는 우부콘 코리아 2023의 개인 후원자 목록입니다.
 <br />올해 총 {patrons.length}명의 참가자 분{patrons.length > 1 ? "들":""}께서 개인 후원을 해 주셨습니다!
@@ -18,6 +21,23 @@ import {
 
 <Row>
     {patrons.map((person) => (
+        <div className="p-card col-4">
+            <h3>{person.name}</h3>
+            <p>{person.org_and_title}</p>
+        </div>
+    ))}
+</Row>
+
+### 회비 회원
+
+아래는 우분투한국커뮤니티의 회비 회원 중 우부콘 코리아 2023에 참여하신 분들의 목록입니다.
+<br />올해 총 {ubuntukr.length}명의 참가자 분{ubuntukr.length > 1 ? "들":""}께서 참여해주셨습니다!
+<br />참여해주신 모든 회비 회원 분들께 감사 드립니다!
+
+(참고: 우분투한국커뮤니티의 회비 회원 중 이름 공개에 동의한 분들의 이름만 여기에 표시됩니다.)
+
+<Row>
+    {ubuntukr.map((person) => (
         <div className="p-card col-4">
             <h3>{person.name}</h3>
             <p>{person.org_and_title}</p>

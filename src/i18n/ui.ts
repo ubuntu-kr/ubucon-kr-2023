@@ -32,9 +32,11 @@ export const ui = {
     'navigation.sessions': '세션 목록',
     'navigation.timetable': '시간표',
     'navigation.sponsor': '후원사/개인 후원',
-    'navigation.patrons': '개인 후원자',
-    'navigation.members': '회비 회원',
-    'navigation.becomeSponsor': '후원사 등록 안내'
+    'navigation.patrons': '개인 후원자 및 회비 회원',
+    'navigation.becomeSponsor': '후원사 등록 안내',
+    'footer.desc': '우분투한국커뮤니티. 우분투(Ubuntu) 및 캐노니컬(Canonical)은 Canonical Ltd.의 등록 상표입니다.',
+    'footer.legal': '정관 및 세칙',
+    'footer.bug': '웹사이트에 대한 버그 보고'
   },
   en: {
     'eventMeta.date': '9th September 2023',
@@ -61,9 +63,11 @@ export const ui = {
     'navigation.sessions': 'Sessions',
     'navigation.timetable': 'Timetable',
     'navigation.sponsor': 'Sponsors/Patrons',
-    'navigation.patrons': 'Individual patrons',
-    'navigation.members': 'Community Members',
-    'navigation.becomeSponsor': 'Become a sponsor'
+    'navigation.patrons': 'Individual patrons and Members with dues',
+    'navigation.becomeSponsor': 'Become a sponsor',
+    'footer.desc': 'Ubuntu Korea Community. Ubuntu and Canonical are registered trademarks of Canonical Ltd.',
+    'footer.legal': 'Bylaws',
+    'footer.bug': 'Report a bug of website'
   },
 
 } as const;
