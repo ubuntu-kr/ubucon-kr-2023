@@ -3,7 +3,7 @@ title: 정보통신산업진흥원
 class: Government
 logo: /sponsors/nipa-kr.png
 sponsorUrl: https://www.oss.kr
-buttonLabel: Visit website
+buttonLabel: 웹사이트 방문
 ---
 
 ### OpenUP - 오픈소스 소프트웨어 통합지원센터 (정보통신산업진흥원 산하 기관)

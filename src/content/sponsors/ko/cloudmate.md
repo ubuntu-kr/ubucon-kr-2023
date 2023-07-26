@@ -3,7 +3,7 @@ title: Cloudmate
 class: Silver
 logo: /sponsors/cloudmate.png
 sponsorUrl: https://cloudmt.co.kr/
-buttonLabel: Visit website
+buttonLabel: 웹사이트 방문
 ---
 
 Cloudmate is the certified CSP company that located in Seoul, Korea.
