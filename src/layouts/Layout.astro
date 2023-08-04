@@ -30,6 +30,18 @@ export function getStaticPaths() {
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content={title}>
+		<meta property="og:site_name" content="UbuCon Korea 2023" >
+		<meta property="og:url" content="">
+		<meta property="og:description" content=`${t('eventMeta.date')}, ${t('eventMeta.venue')}`>
+		<meta property="og:type" content="">
+		<meta property="og:image" content="https://2023.ubuntu-kr.org/tickets.png">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@UbuntuKrOrg">
+		<meta name="twitter:title" content=`UbuCon Korea 2023 ${title}`>
+		<meta name="twitter:description" content=`${t('eventMeta.date')}, ${t('eventMeta.venue')}`>
+		<meta name="twitter:image" content="https://2023.ubuntu-kr.org/tickets.png">
 		<title>{title}</title>
 	</head>
 	<body>
