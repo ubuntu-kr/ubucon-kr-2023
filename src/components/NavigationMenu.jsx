@@ -17,6 +17,15 @@ export default function NavigationMenu(props) {
 				{
 					items: [
 						{
+							label: `${t("navigation.venueSafety")}`,
+							url: `/${props.lang}/venue`
+						}
+					],
+					label: `${t("navigation.venueTravel")}`
+				},
+				{
+					items: [
+						{
 							label: `${t("cfp.title")}`,
 							url: `/cfp`
 						},
