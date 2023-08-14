@@ -1,7 +1,7 @@
 ---
 title: Cloudmate
 class: Silver
-logo: /sponsors/cloudmate.png
+logo: /sponsors/cloudmate.svg
 sponsorUrl: https://cloudmt.co.kr/
 buttonLabel: Visit website
 ---
