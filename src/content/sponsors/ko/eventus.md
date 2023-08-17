@@ -1,5 +1,5 @@
 ---
-title: EVENT-US
+title: 이벤터스
 class: Media
 logo: /sponsors/eventus.svg
 sponsorUrl: https://event-us.kr/
