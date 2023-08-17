@@ -1,5 +1,5 @@
 ---
-title: GroMetric
+title: 그로메트릭
 class: Bronze
 logo: /sponsors/grometric.svg
 sponsorUrl: http://www.grometric.kr
