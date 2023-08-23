@@ -8,45 +8,56 @@ const { baseUrl, sessionEndpoint } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const sessions = data.results ? data.results[0].contributions : null;
-const imgList = [190, 203, 209, 210, 219, 272, 288, 290, 298, 299];
-const speakerList = [190, 219, 290, 299];
+const imgList = [190, 203, 209, 210, 219, 272, 288, 290, 298, 299, 385, 386];
+const speakerList = [190, 219, 290, 299, 385, 386];
 
 const sessionList = sessions ? 
 	sessions.filter(item => speakerList.includes(item["speakers"][0]["person_id"])).map(item => {
-	const speakers = [item["speakers"][0]["fullName"]];
+	const speakers = [
+		{
+			name: item["speakers"][0]["fullName"],
+			img: item["speakers"][0]["person_id"]
+		}
+	];
+
 	if (item["speakers"].length > 1) {
 		for (let speaker = 1; speaker < item["speakers"].length; speaker++) {
-			speakers.push(item["speakers"][speaker]["fullName"]);
+			speakers.push({
+				name: item["speakers"][speaker]["fullName"],
+				img: item["speakers"][speaker]["person_id"]
+			});
 		}
 	}
 
 	return {
 		title: item["title"],
 		type: item["type"],
-		speaker: speakers.join("·"),
-		imgId: item["speakers"][0]["person_id"],
+		speaker: speakers,
 		url: item["url"]
 	};
-}).slice(0, 4) : null;
+}).slice(0, 5) : null;
+
 ---
 
 <Strip shallow element="section">
 	<h2>{t("featured.tagline")}</h2>		
 	<Row>
-		{sessionList ? sessionList.map(item => (
-			<Col size={6}>
-				<div class="p-media-object--large">
-					<img class="p-media-object__image is-round" 
-						src={imgList.includes(item.imgId) ? `/speakers/${item.imgId}.png` : "/speakers/default.png"} alt="" />
-					<div class="p-media-object__details">
-						<a href={item.url}>
-							<h3>{item.speaker}</h3>
-						</a>
-						<p class="p-media-object__content">{item.title}</p>
+		{sessionList ? sessionList.map(item =>
+			item.speaker ? item.speaker.map(person => (
+				<Col size={6}>			
+					<div class="p-media-object--large">
+						<img class="p-media-object__image is-round" 
+						src={imgList.includes(person.img) ? `/speakers/${person.img}.png` : "/speakers/default.png"} alt="" />
+						<div class="p-media-object__details">
+							<a href={item.url}>
+								<h3>{person.name}</h3>
+							</a>
+							<p class="p-media-object__content">{item.title}</p>
+						</div>
 					</div>
-				</div>
-			</Col>
-		)) : <p>오류가 발생하여 불러오지 못했습니다.</p>}
+				</Col>
+			)): ""
+		) : <p>오류가 발생하여 불러오지 못했습니다.</p>}
 	</Row>
 	<Row style={{marginTop: "1em"}}>
 		<Col size={12} className="u-align-text--right">
