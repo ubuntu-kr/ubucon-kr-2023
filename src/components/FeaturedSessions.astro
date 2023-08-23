@@ -8,8 +8,8 @@ const { baseUrl, sessionEndpoint } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const sessions = data.results ? data.results[0].contributions : null;
-const imgList = [190, 203, 209, 210, 219, 272, 288, 290, 298, 299];
-const speakerList = [190, 219, 290, 299];
+const imgList = [190, 203, 209, 210, 219, 272, 288, 290, 298, 299, 385];
+const speakerList = [190, 219, 290, 299, 385];
 
 const sessionList = sessions ? 
 	sessions.filter(item => speakerList.includes(item["speakers"][0]["person_id"])).map(item => {
@@ -27,7 +27,7 @@ const sessionList = sessions ?
 		imgId: item["speakers"][0]["person_id"],
 		url: item["url"]
 	};
-}).slice(0, 4) : null;
+}).slice(0, 5) : null;
 ---
 
 <Strip shallow element="section">
