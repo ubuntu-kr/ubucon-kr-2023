@@ -33,6 +33,10 @@ export default function NavigationMenu(props) {
 							url: `https://events.canonical.com/event/32/timetable/`
 						},
 						{
+							label: `${t("navigation.timetable.pdf")}`,
+							url: `/uck23_timetable.pdf`
+						},
+						{
 							label: `${t("navigation.ksp")}`,
 							url: `https://github.com/ubuntu-kr/ksp-toolkits/blob/master/ksp/ksp-20230909/readme.md`
 						}
