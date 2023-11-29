@@ -1,15 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import {
-	Navigation,
 	Strip,
 	Col,
 	Button,
-	List,
 } from "@canonical/react-components";
 import FeaturedSessions from "../../components/FeaturedSessions.astro";
 import DiscourseNoticeBanner from "../../components/DiscourseNoticeBanner.jsx";
-import { getCollection, getEntry } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -26,8 +23,8 @@ export function getStaticPaths() {
 			<h1>{t("eventMeta.theme")}</h1>
 			<h1>{t("eventMeta.date")}</h1>
 			<h1>{t("eventMeta.venue")}</h1>
-			<Button appearance="" element={"a"} href="/tickets">
-				{t("tickets.details")}
+			<Button appearance="" element={"a"} href="/video">
+				{t("session.video")}
 			</Button>	
 		</Col>
 		<Col size={4}>
@@ -61,6 +58,9 @@ export function getStaticPaths() {
 						</p>
 						<Button appearance="" element={"a"} href="/tickets">
 							{t("tickets.details")}
+						</Button>
+						<Button appearance="" element={"a"} href="/video">
+							{t("session.video")}
 						</Button>
 					</div>
 				</div>
